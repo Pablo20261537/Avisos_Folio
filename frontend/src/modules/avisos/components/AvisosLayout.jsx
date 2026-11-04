@@ -1,8 +1,12 @@
 import React from 'react'
+import TablaAvisos from './components/TablaAvisos';
 
 export const AvisosLayout = () => {
   return (
-    <div>AvisosLayout</div>
+    <div>
+      
+      <TablaAvisos/>
+    </div>
   )
 }
 

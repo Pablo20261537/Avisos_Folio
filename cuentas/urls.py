@@ -6,7 +6,7 @@ from rest_framework.routers import DefaultRouter
 from .views import api_login, api_dashboard, AlertaViewSet
 
 router = DefaultRouter()
-router.register(r'api/alertas', AlertaViewSet, basename='alerta')
+router.register(r'api/avisos', AlertaViewSet, basename='alerta')
 
 urlpatterns = [
     # 2. Redirige la raíz ('') directamente a la vista de login
@@ -18,7 +18,7 @@ urlpatterns = [
     #path('dashboard/', views.dashboard_view, name='dashboard'),
 
     path('api/login/', api_login, name='api_login'),
-        path('api/dashboard/', api_dashboard, name='api_dashboard'),
+    path('api/dashboard/', api_dashboard, name='api_dashboard'),
     ] + router.urls
 
 

@@ -5,9 +5,12 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Modulo01 from './components/Modulo01';
 import Modulo02 from './components/Modulo02';
+import TablaAvisos from './modules/avisos/components/TablaAvisos';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Footer from './components/Footer';
+
+
 import BackgroundNodes from './components/BackgroundNodes';
 import './index.css';
 
@@ -179,8 +182,20 @@ function App() {
             <Modulo02 
               token={token}
               onBack={() => navigateTo('dashboard')} 
+            /> 
+
+          )}
+        
+          {currentView === 'TablaAvisos' && (
+            <TablaAvisos 
+              token={token}
+              onBack={() => navigateTo('dashboard')} 
             />
           )}
+
+        
+            
+
         </main>
 
       </div>

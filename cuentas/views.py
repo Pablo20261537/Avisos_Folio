@@ -3,6 +3,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from django.contrib.auth import authenticate, login, logout
 from rest_framework.authtoken.models import Token
+#from inertia import render
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -41,3 +42,8 @@ class AlertaViewSet(viewsets.ModelViewSet):
     queryset = Alerta.objects.all().order_by('-fecha_creacion')
     serializer_class = AlertaSerializer
     permission_classes = [IsAuthenticated]
+
+
+
+def avisosfolios(request):
+    return render(request,'TablaAvisos')
