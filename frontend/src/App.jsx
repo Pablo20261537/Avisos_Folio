@@ -9,6 +9,8 @@ import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BackgroundNodes from './components/BackgroundNodes';
+
+import AvisosLayout from './modules/avisos/AvisosLayout';
 import './index.css';
 
 function App() {
@@ -177,6 +179,13 @@ function App() {
 
           {currentView === 'modulo02' && (
             <Modulo02 
+              token={token}
+              onBack={() => navigateTo('dashboard')} 
+            />
+          )}
+
+             {currentView === 'avisoslayout' && (
+            <AvisosLayout 
               token={token}
               onBack={() => navigateTo('dashboard')} 
             />

@@ -1,8 +1,10 @@
 import React from 'react'
-
+import NuevoAviso from './components/NuevoAviso';
 export const AvisosLayout = () => {
   return (
-    <div>AvisosLayout</div>
+    <div>
+      <NuevoAviso/>
+    </div>
   )
 }
 
