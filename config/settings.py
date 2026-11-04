@@ -87,7 +87,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "lab_django",          # El nombre de la base de datos que creaste
         "USER": "postgres",                # Tu usuario de PostgreSQL (por defecto es postgres)
-        "PASSWORD": "12345",       # La contraseña que configuraste en PostgreSQL
+        "PASSWORD": "anam2026",       # La contraseña que configuraste en PostgreSQL
         "HOST": "localhost",
         "PORT": "5432",
     }

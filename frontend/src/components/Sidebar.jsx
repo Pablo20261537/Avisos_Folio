@@ -35,6 +35,7 @@ function Sidebar({ collapsed, currentView, onNavigate }) {
     { id: 'dashboard', label: 'HOME', icon: House },
     { id: 'modulo01', label: 'Modulo_01', icon: FileText },
     { id: 'modulo02', label: 'Modulo_02', icon: FileText },
+    { id: 'TablaAvisos', label: 'TablaAvisos', icon: FileText },
     { id: 'perfil', label: 'Mi Perfil', icon: User },
     { 
       id: 'Catalogos', label: 'Catalogos', icon: BookSearch,
