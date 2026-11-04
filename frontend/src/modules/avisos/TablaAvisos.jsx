@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import NuevoAviso from './components/NuevoAviso';
+
 
 export default function TablaAvisos({ token, onBack }) {
   // Datos simulados (Mock Data) para visualizar la interfaz sin errores de compilación
@@ -92,12 +94,15 @@ export default function TablaAvisos({ token, onBack }) {
       <div className="p-6 bg-white rounded-2xl shadow-md border border-gray-200">
         {/* Barra superior: Botón Nuevo Aviso y Buscador */}
         <div className="flex justify-between items-center mb-6">
-          <button
+            <NuevoAviso   />
+
+
+          {/* <button
             onClick={() => alert('Aquí se abrirá el modal de Nuevo Aviso')}
             className="bg-[#691C32] text-white px-4 py-2.5 rounded-xl font-medium hover:bg-[#521527] transition shadow-xs flex items-center gap-2 cursor-pointer text-xs"
           >
             <span>+ Nuevo Aviso</span>
-          </button>
+          /* </button> */ }
           
           <input
             type="text"
@@ -105,6 +110,7 @@ export default function TablaAvisos({ token, onBack }) {
             onChange={e => setSearchTerm(e.target.value)}
             placeholder="Buscar por aviso, asunto o aduana..."
             className="border border-gray-300 rounded-xl px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-[#691C32] w-80"
+          
           />
         </div>
 

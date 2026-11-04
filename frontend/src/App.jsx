@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard';
 import Modulo01 from './components/Modulo01';
 import Modulo02 from './components/Modulo02';
 import TablaAvisos from "./modules/avisos/TablaAvisos";
+import AvisosLayout from './modules/avisos/AvisosLayout';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -185,6 +186,14 @@ function App() {
 
           {currentView === 'TablaAvisos' && (
             <TablaAvisos 
+              token={token}
+              onBack={() => navigateTo('dashboard')} 
+            />
+          )}
+
+      
+          {currentView === 'AvisosLayout' && (
+            <AvisosLayout 
               token={token}
               onBack={() => navigateTo('dashboard')} 
             />
