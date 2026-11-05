@@ -1,10 +1,9 @@
 import React from 'react'
-import TablaAvisos from './components/TablaAvisos';
-
+import NuevoAviso from './components/NuevoAviso';
+import TablaAvisos from './TablaAvisos';
 export const AvisosLayout = () => {
   return (
     <div>
-      
       <TablaAvisos/>
     </div>
   )
