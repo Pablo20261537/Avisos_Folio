@@ -81,7 +81,7 @@ const handleTipoAlertaChange = (valorSeleccionado) => {
         
         {/* <Textarea className="h-32" placeholder="Aqui deberia ir el editor de texto"/> */}
             <TextEditor/>
-
+            <br></br>
         <FileDropZone />
 
           <DialogFooter>

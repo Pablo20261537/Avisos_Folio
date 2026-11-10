@@ -14,7 +14,7 @@ export const TextEditor = ({value,onChange,placeholder}) => {
       // 1. Inicializamos Quill
       quillInstanceRef.current = new Quill(editorContainerRef.current, {
         theme: 'snow',
-        placeholder: placeholder || 'Escribe algo increíble...',
+        placeholder: placeholder || '',
         modules: {
           toolbar: [
             ['bold', 'italic', 'underline'], // Estilos básicos

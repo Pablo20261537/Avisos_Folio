@@ -74,11 +74,6 @@ export const DetailsAviso = () => {
 
       {/* Fila 3: Una Card que contiene 2 elementos */}
       <Card>
-        <CardHeader>
-          <CardTitle className="text-sm font-medium">
-            Fila 3 (2 elementos)
-          </CardTitle>
-        </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-base">
             <div className="p-4 rounded-lg flex items-center gap-8 ">
@@ -97,11 +92,6 @@ export const DetailsAviso = () => {
 
       {/* Fila 4: Una Card que contiene 2 elementos */}
       <Card>
-        <CardHeader>
-          <CardTitle className="text-sm font-medium">
-            {/* Fila 3 (2 elementos) */}
-          </CardTitle>
-        </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
             <div className="p-4 rounded-lg flex items-center gap-8 h-5">

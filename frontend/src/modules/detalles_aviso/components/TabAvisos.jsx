@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 
 import { Paperclip, Clipboard } from "lucide-react";
+import TextoAviso from "./TextoAviso";
 export const TabAvisos = () => {
   return (
     <Tabs defaultValue="aviso" className="w-full pt-4">
@@ -29,7 +30,7 @@ export const TabAvisos = () => {
       <TabsContent value="aviso">
         <Card>
           <CardContent className="-6">
-            <DetailsAviso />
+            <TextoAviso />
           </CardContent>
         </Card>
       </TabsContent>
