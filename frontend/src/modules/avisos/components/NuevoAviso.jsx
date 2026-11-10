@@ -15,6 +15,8 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import CustomCombo from "./Combos";
 import FileDropZone from "./FileDropZone";
+import TextEditor from "@/components/TextEditor";
+
 const data = ["data1", "data2", "data3", "data4", "data5"];
 
 export const NuevoAviso = () => {
@@ -77,10 +79,10 @@ const handleTipoAlertaChange = (valorSeleccionado) => {
         </div> 
 
         
-        <Textarea className="h-32" placeholder="Aqui deberia ir el editor de texto"/>
+        {/* <Textarea className="h-32" placeholder="Aqui deberia ir el editor de texto"/> */}
+            <TextEditor/>
 
-
-        <FileDropZone/>
+        <FileDropZone />
 
           <DialogFooter>
             {/* <DialogClose render={<Button variant="destructive">Cancel</Button>} /> */}
