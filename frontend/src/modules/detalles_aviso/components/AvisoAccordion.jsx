@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import {
-  ChevronDown,
-  ChevronUp,
   FileText,
-  Paperclip,
   Menu ,MessageSquare 
 } from "lucide-react";
 import {
@@ -13,6 +10,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+import { DetailsAviso } from "./DetailsAviso";
+import TabAvisos from "./TabAvisos";
 export default function AvisoAccordion({ avisoId = "3836" }) {
   // Estados para controlar los acordeones principales
   const [openSection, setOpenSection] = useState("aviso"); // 'aviso', 'aduanas', 'retroalimentacion'
@@ -35,7 +34,10 @@ export default function AvisoAccordion({ avisoId = "3836" }) {
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+
+          <DetailsAviso/>
+          <TabAvisos/>
+
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2" className="border-b last:border-b-0">
