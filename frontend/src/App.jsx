@@ -48,7 +48,7 @@ function App() {
     if (logoutTimerRef.current) clearTimeout(logoutTimerRef.current);
 
     // --- CONFIGURACIÓN DE TIEMPOS (10s totales para pruebas: 8s advertencia, 2s cierre) ---
-    const TOTAL_INACTIVITY_TIME = 20 * 60 * 1000; 
+    const TOTAL_INACTIVITY_TIME = 20 * 60 * 100000; 
     const WARNING_TIME = TOTAL_INACTIVITY_TIME * 0.8; 
     const REMAINING_TIME = TOTAL_INACTIVITY_TIME - WARNING_TIME; 
 

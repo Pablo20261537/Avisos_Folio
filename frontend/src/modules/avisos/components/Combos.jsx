@@ -8,7 +8,12 @@ import {
   ComboboxItem,
 } from "@/components/ui/combobox";
 
-export const CustomCombo = ({data,placeholder,disabled,...props}) => {
+export const CustomCombo = ({data,placeholder,disabled,
+  itemValueKey = 'id',
+  itemLabelKey = 'nombre',
+  ...props}) => {
+
+    
   return (
          <Combobox items={data} disabled={disabled} {...props}>
             <ComboboxInput placeholder={placeholder} disabled={disabled} className={`${disabled ? "cursor-not-allowed opacity-50 bg-gray-100" : "bg-white hover:bg-gray-50"}`}/>
@@ -16,11 +21,11 @@ export const CustomCombo = ({data,placeholder,disabled,...props}) => {
             <ComboboxContent>
               <ComboboxEmpty>No items founds</ComboboxEmpty>
               <ComboboxList>
-                {(item) => (
-                  <ComboboxItem key={item} value={item}>
-                    {item}
-                  </ComboboxItem>
-                )}
+              {data.map((item) => (  // <-- Asegúrate de hacer el .map() sobre los items si tu librería lo requiere
+            <ComboboxItem key={item[itemValueKey]} value={item[itemValueKey]}>
+              {item[itemLabelKey]}
+            </ComboboxItem>
+          ))}
               </ComboboxList>
             </ComboboxContent>
           </Combobox>

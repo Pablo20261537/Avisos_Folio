@@ -6,8 +6,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import TextoAviso from "./TextoAviso";
 
+import { DetailsAviso } from "./DetailsAviso";
+import TabAvisos from "./TabAvisos";
 import Tab_DetailAduana from "./Tab_DetailAduana";
+
 export default function AvisoAccordion({ avisoId = "3836" }) {
   // Estado para controlar el detalle expandido dentro de la tabla de Aduanas
   const [expandedAduanaId, setExpandedAduanaId] = useState(null);
@@ -23,12 +27,14 @@ export default function AvisoAccordion({ avisoId = "3836" }) {
         >
           <AccordionTrigger className="w-full bg-[#691C32] text-white p-4 flex justify-between items-center font-bold text-xs uppercase tracking-wider cursor-pointer hover:no-underline">
             <div className="flex items-center gap-2">
-              <FileText size={16} />
+              <FileText />
               <span>Avisos</span>
             </div>
           </AccordionTrigger>
-          <AccordionContent className="p-4 text-xs text-gray-700">
-            Información general del aviso #{avisoId}.
+          <AccordionContent>
+            <DetailsAviso />
+
+            <TabAvisos />
           </AccordionContent>
         </AccordionItem>
 
@@ -39,7 +45,7 @@ export default function AvisoAccordion({ avisoId = "3836" }) {
         >
           <AccordionTrigger className="w-full bg-[#691C32] text-white p-4 flex justify-between items-center font-bold text-xs uppercase tracking-wider cursor-pointer hover:no-underline">
             <div className="flex items-center gap-2">
-              <Menu size={16} />
+              <Menu />
               <span>Aduanas</span>
             </div>
           </AccordionTrigger>
@@ -55,7 +61,7 @@ export default function AvisoAccordion({ avisoId = "3836" }) {
         >
           <AccordionTrigger className="w-full bg-[#691C32] text-white p-4 flex justify-between items-center font-bold text-xs uppercase tracking-wider cursor-pointer hover:no-underline">
             <div className="flex items-center gap-2">
-              <MessageSquare size={16} />
+              <MessageSquare />
               <span>Retroalimentacion de aduanas</span>
             </div>
           </AccordionTrigger>
