@@ -13,6 +13,8 @@ import {
 
 import { Paperclip, Clipboard } from "lucide-react";
 import TextoAviso from "./TextoAviso";
+
+import msgData from "./Machote.json"
 export const TabAvisos = () => {
   return (
     <Tabs defaultValue="aviso" className="w-full pt-4">
@@ -30,7 +32,7 @@ export const TabAvisos = () => {
       <TabsContent value="aviso">
         <Card>
           <CardContent className="-6">
-            <TextoAviso />
+            <TextoAviso msg={msgData.contenidoHtml}/>
           </CardContent>
         </Card>
       </TabsContent>
