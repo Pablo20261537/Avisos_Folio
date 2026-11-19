@@ -179,7 +179,7 @@ const handleUsuarioSChange = (valorSeleccionado) => {
         </DialogContent>
       </form>
     </Dialog>
-  );
+  );  
 };
 
 export default NuevoAviso;
