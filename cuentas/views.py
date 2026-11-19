@@ -61,7 +61,18 @@ class AlertaViewSet(viewsets.ModelViewSet):
         # Llama al auxiliar apuntando a usuarios_x_area
         endpoint = f"usuarios_area/{id_area}"
         return self._llamar_fastapi(endpoint)
+
     
+    @action(detail=False, methods=['get'], url_path='aduanas_x_tipo/(?P<id_tipo_aduana>[0-9]+)')
+    def aduanas_x_tipo(self, request, id_tipo_aduana= None):
+        endpoint = f"aduanas_x_tipo/{id_tipo_aduana}"
+        return self._llamar_fastapi(endpoint)
+
+    @action(detail=False, methods=['get'], url_path='alertas_aduana/(?P<clave_aduana_3>[0-9]+)')
+    def alertas_x_aduana(self, request, clave_aduana_3= None):
+        endpoint = f"alertas_aduana/{clave_aduana_3}"
+        return self._llamar_fastapi(endpoint)
+
 # class AlertaViewSet(viewsets.ModelViewSet):
 #     queryset = Alerta.objects.all().order_by('-fecha_creacion')
 #     serializer_class = AlertaSerializer
@@ -73,7 +84,7 @@ class AlertaViewSet(viewsets.ModelViewSet):
 #         try:
 #             # Asumiendo que FastAPI corre en el puerto 8000 y Django en el 8001 (o viceversa)
 #             fastapi_response = requests.get("http://127.0.0.1:8001/catalogos/Nvo_aviso")
-#             datos_de_fastapi = fastapi_response.json()
+#             datos_de_fastapi = fastapi_response.jsson()
 #         except requests.exceptions.RequestException:
 #             return Response({"error": "No se pudo comunicar con FastAPI"}, status=503)
 

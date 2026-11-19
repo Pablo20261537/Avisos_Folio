@@ -21,6 +21,8 @@ export const TextEditor = ({value,onChange,placeholder}) => {
             // ['blockquote', 'code-block'],
             // [{ header: 1 }, { header: 2 }],           // Encabezados
             [{ list: 'ordered' }, { list: 'bullet' }], // Listas
+            [{ color: [] }, { background: [] }],
+
             // ['clean']                                  // Limpiar formato
           ]
         }
@@ -44,8 +46,17 @@ export const TextEditor = ({value,onChange,placeholder}) => {
   }, []); // El array vacío asegura que solo se inicialice una vez al montar
   return (
 <div className="quill-wrapper">
+  <style>{`
+      .quill-wrapper .ql-container {
+        max-height: 180px;
+        overflow-y: auto;
+        background-color: #fff;
+      }
+
+    `}</style>
       {/* El div donde Quill montará el editor */}
-      <div ref={editorContainerRef} style={{ minHeight: '180px', backgroundColor: '#fff' }} />
+      <div ref={editorContainerRef}/> 
+      {/* style={{ minHeight: '180px', backgroundColor: '#fff' }} /> */}
     </div>
 
   )
