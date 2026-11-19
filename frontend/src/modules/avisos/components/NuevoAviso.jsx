@@ -80,7 +80,7 @@ const handleAreaChange = (valorSeleccionado) => {
        })
       .then(res => res.json())
       .then(dataU => {
-        console.log("Hello There General Kenobi --> ", dataU)
+        console.log("usuarios --> ", dataU)
         setUsuarioSList(dataU)
       })
     
@@ -94,10 +94,10 @@ const handleTipoAduanaChange = (valorSeleccionado) => {
        })
       .then(res => res.json())
       .then(dataAd_T => {
-        console.log("Aduanas --> ", dataAd_T)
+        console.log("Aduanas por tipo --> ", dataAd_T)
         setAduanaList(dataAd_T)
       })
-      console.log("Hola?")
+      // console.log("Hola?")
 }
 
 const handleTipoEventoChange = (valorSeleccionado) => {
@@ -111,7 +111,7 @@ const handleAduanaChange = (valorSeleccionado) => {
        })
       .then(res => res.json())
       .then(dataAL_d => {
-        console.log("Aduanas --> ", dataAL_d)
+        console.log("Alertas por aduana --> ", dataAL_d)
         setTipoAlertaList(dataAL_d)
       })
 }
@@ -155,7 +155,7 @@ const handleUsuarioSChange = (valorSeleccionado) => {
             <CustomCombo data={Array.isArray(usuarioSList) ? usuarioSList : []} placeholder={"Selecciona el usuario solicitante"} disabled={!area}
             value={usuarioS} onValueChange={(itemsSeleccionado) => {
               handleUsuarioSChange(itemsSeleccionado)
-            }} itemValueKey="id_usuario" itemLabelKey="nombres"
+            }} itemValueKey="id_usuario" itemLabelKey="nombre_completo"
             />
 
             <CustomCombo  data={Array.isArray(tipoAduanaList) ? tipoAduanaList : []} placeholder={"Selecciona tipo(s) de aduana"} value={tipoAduana} 
