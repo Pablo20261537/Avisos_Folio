@@ -40,9 +40,12 @@ const [tipoAduanaList, setTipoAduanaList] = useState(null);
 const[tipoEvento,setTipoEvento] = useState(null);
 const[tipoEventoList,setTipoEventoList] = useState(null);
 
-
 const [aduana,setAduana] = useState(null);
+const [aduanaList,setAduanaList] = useState(null);
+
+
 const[tipoAlerta,setTipoAlerta] = useState(null);
+const[tipoAlertaList,setTipoAlertaList] = useState(null);
 
 const [avisos,setAvisos] = useState(null);
 
@@ -87,6 +90,14 @@ const handleAreaChange = (valorSeleccionado) => {
 
 const handleTipoAduanaChange = (valorSeleccionado) => {
     setTipoAduana(valorSeleccionado)
+     fetch(`http://localhost:8000/api/avisos/aduanas_x_tipo/${valorSeleccionado}/`,{
+       })
+      .then(res => res.json())
+      .then(dataAd_T => {
+        console.log("Aduanas --> ", dataAd_T)
+        setAduanaList(dataAd_T)
+      })
+      console.log("Hola?")
 }
 
 const handleTipoEventoChange = (valorSeleccionado) => {
@@ -95,6 +106,14 @@ const handleTipoEventoChange = (valorSeleccionado) => {
 
 const handleAduanaChange = (valorSeleccionado) => {
     setAduana(valorSeleccionado)
+
+      fetch(`http://localhost:8000/api/avisos/alertas_aduana/${valorSeleccionado}/`,{
+       })
+      .then(res => res.json())
+      .then(dataAL_d => {
+        console.log("Aduanas --> ", dataAL_d)
+        setTipoAlertaList(dataAL_d)
+      })
 }
 
 const handleTipoAlertaChange = (valorSeleccionado) => {
@@ -144,9 +163,15 @@ const handleUsuarioSChange = (valorSeleccionado) => {
               handleTipoAduanaChange(itemsSeleccionado)
              }} itemValueKey="id_tipo_aduana" itemLabelKey="tipo_aduana"/>
 
-            <CustomCombo data={data} placeholder={"Selecciona la(s) Aduana(s)"} value={aduana} onValueChange={handleAduanaChange} disabled={!tipoAduana}/>
+            <CustomCombo data={Array.isArray(aduanaList) ? aduanaList : []}  placeholder={"Selecciona la(s) Aduana(s)"} value={aduana} 
+           onValueChange={(itemsSeleccionado) => {
+              handleAduanaChange(itemsSeleccionado)
+             }} itemValueKey="clave_aduana_3" itemLabelKey="nombre_corto" disabled={!tipoAduana}/>
 
-            <CustomCombo data={data} placeholder={"Selecciona el tipo(s) de alerta"} value={tipoAlerta} onValueChange={handleTipoAlertaChange} disabled={!tipoAduana}/>
+            <CustomCombo data={Array.isArray(tipoAlertaList) ? tipoAlertaList : []} placeholder={"Selecciona el tipo(s) de alerta"} value={tipoAlerta} 
+            onValueChange={(itemsSeleccionado) => {
+              handleTipoAlertaChange(itemsSeleccionado)
+             }} itemValueKey="id_relacion" itemLabelKey="tipo_alerta" disabled={!tipoAduana}/>
 
             <CustomCombo data={data} placeholder={"Selecciona los usuarios de Aduana"} disabled={!aduana && !tipoAlerta}/>
 
