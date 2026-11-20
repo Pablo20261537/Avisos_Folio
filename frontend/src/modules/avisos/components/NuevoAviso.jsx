@@ -23,7 +23,7 @@ const data = [
   { id: "3", nombre: "data3" },
 ];
 export const NuevoAviso = () => {
-const[dependenciaList,setDependenciaList] = useState(null);
+const[dependenciaList,setDependenciaList] = useState([]);
 const[dependencia,setDependencia] = useState(null);
 
 const [area,setArea] = useState(null);
@@ -59,7 +59,8 @@ const [avisos,setAvisos] = useState(null);
   .then(dataR => {
     // React usa los datos a su antojo
     console.log("Hi-->", dataR)
-    setDependenciaList(dataR.dependencias);
+    // setDependenciaList(dataR.dependencias);
+    setDependenciaList(Array.isArray(dataR.dependencias) ? dataR.dependencias : []);
     setAreaList(dataR.areas);
     setTipoAduanaList(dataR.tipo_aduana);
     setTipoEventoList(dataR.eventos);
