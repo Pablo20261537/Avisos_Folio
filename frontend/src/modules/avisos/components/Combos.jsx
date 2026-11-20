@@ -7,6 +7,12 @@ import {
   ComboboxList,
   ComboboxItem,
 } from "@/components/ui/combobox";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export const CustomCombo = ({
   data,
@@ -16,6 +22,7 @@ export const CustomCombo = ({
   onValueChange,
   itemValueKey = "id",
   itemLabelKey = "nombre",
+  msgTooltip,
   ...props
 }) => {
   const safeData = useMemo(() => (Array.isArray(data) ? data : []), [data]);
@@ -76,15 +83,29 @@ export const CustomCombo = ({
       itemToStringLabel={itemToStringLabel}
       {...props}
     >
-      <ComboboxInput
-        placeholder={placeholder}
-        disabled={disabled}
-        className={
-          disabled
-            ? "cursor-not-allowed opacity-50 bg-gray-100"
-            : "bg-white hover:bg-gray-50"
-        }
-      />
+
+      <TooltipProvider delay={250}>
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <ComboboxInput
+                placeholder={placeholder}
+                disabled={disabled}
+                className={`${
+                  disabled
+                    ? "cursor-not-allowed opacity-50 bg-gray-100"
+                    : "bg-white hover:bg-gray-50"
+                }`}
+              />
+            }
+          />
+     
+            <TooltipContent>
+              <p>{msgTooltip}</p>
+            </TooltipContent>
+          
+        </Tooltip>
+      </TooltipProvider>
 
       <ComboboxContent>
         <ComboboxEmpty>No items found</ComboboxEmpty>

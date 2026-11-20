@@ -20,9 +20,11 @@ export default function AvisoAccordion({ avisoId = "3836" }) {
     <div className="space-y-4">
       {/* 1. Quitamos los bordes generales y usamos space-y o dejamos que el margen inferior de cada item actúe */}
       <Accordion type="multiple" defaultValue={["item-2"]} className="w-full">
-        
         {/* Ítem 1: Avisos */}
-        <AccordionItem value="item-1" className="mb-3 rounded-2xl border border-gray-200 bg-white overflow-hidden last:mb-0">
+        <AccordionItem
+          value="item-1"
+          className="mb-3 rounded-2xl border border-gray-200 bg-white overflow-hidden last:mb-0"
+        >
           <AccordionTrigger className="w-full bg-[#691C32] text-white p-4 flex justify-between items-center font-bold text-xs uppercase tracking-wider cursor-pointer hover:no-underline">
             <div className="flex items-center gap-2">
               <FileText />
@@ -37,7 +39,10 @@ export default function AvisoAccordion({ avisoId = "3836" }) {
         </AccordionItem>
 
         {/* Ítem 2: Aduanas */}
-        <AccordionItem value="item-2" className="mb-3 rounded-2xl border border-gray-200 bg-white overflow-hidden last:mb-0">
+        <AccordionItem
+          value="item-2"
+          className="mb-3 rounded-2xl border border-gray-200 bg-white overflow-hidden last:mb-0"
+        >
           <AccordionTrigger className="w-full bg-[#691C32] text-white p-4 flex justify-between items-center font-bold text-xs uppercase tracking-wider cursor-pointer hover:no-underline">
             <div className="flex items-center gap-2">
               <Menu />
@@ -50,7 +55,10 @@ export default function AvisoAccordion({ avisoId = "3836" }) {
         </AccordionItem>
 
         {/* Ítem 3: Retroalimentación */}
-        <AccordionItem value="item-3" className="mb-3 rounded-2xl border border-gray-200 bg-white overflow-hidden last:mb-0">
+        <AccordionItem
+          value="item-3"
+          className="mb-3 rounded-2xl border border-gray-200 bg-white overflow-hidden last:mb-0"
+        >
           <AccordionTrigger className="w-full bg-[#691C32] text-white p-4 flex justify-between items-center font-bold text-xs uppercase tracking-wider cursor-pointer hover:no-underline">
             <div className="flex items-center gap-2">
               <MessageSquare />

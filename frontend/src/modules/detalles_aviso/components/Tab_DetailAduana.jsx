@@ -27,7 +27,7 @@ export const Tab_DetailAduana = () => {
         <TableRow>
           <TableCell className="font-medium">
             <Badge className="bg-[#691C32] hover:bg-[#521527] text-white p-2 rounded-lg">
-              080
+              810
             </Badge>
           </TableCell>
           <TableCell>COATZACOALCOS</TableCell>
