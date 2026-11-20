@@ -7,6 +7,12 @@ import {
   ComboboxList,
   ComboboxItem,
 } from "@/components/ui/combobox";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export const CustomCombo = ({
   data,
@@ -14,6 +20,7 @@ export const CustomCombo = ({
   disabled,
   itemValueKey = "id",
   itemLabelKey = "nombre",
+  msgTooltip,
   ...props
 }) => {
   const safeData = Array.isArray(data) ? data : [];
@@ -24,25 +31,54 @@ export const CustomCombo = ({
     if (typeof val === "object") return String(val[itemLabelKey] ?? "");
 
     const found = safeData.find(
-      (item) => typeof item === "object" && item !== null &&
+      (item) =>
+        typeof item === "object" &&
+        item !== null &&
         String(item[itemValueKey]) === String(val)
     );
 
     return found ? String(found[itemLabelKey] ?? "") : String(val);
   };
 
+  const tooltipText = getLabel(props.value) || placeholder;
+
   return (
     <Combobox
-      items={safeData} disabled={disabled} itemToStringLabel={getLabel} {...props}
+      items={safeData}
+      disabled={disabled}
+      itemToStringLabel={getLabel}
+      {...props}
     >
-      <ComboboxInput
-        placeholder={placeholder} disabled={disabled} className={`${ disabled? "cursor-not-allowed opacity-50 bg-gray-100": "bg-white hover:bg-gray-50"
-        }`}/>
-        
+      <TooltipProvider delay={250}>
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <ComboboxInput
+                placeholder={placeholder}
+                disabled={disabled}
+                className={`${
+                  disabled
+                    ? "cursor-not-allowed opacity-50 bg-gray-100"
+                    : "bg-white hover:bg-gray-50"
+                }`}
+              />
+            }
+          />
+     
+            <TooltipContent>
+              <p>{msgTooltip}</p>
+            </TooltipContent>
+          
+        </Tooltip>
+      </TooltipProvider>
+
       <ComboboxContent>
         <ComboboxEmpty>No items found</ComboboxEmpty>
         <ComboboxList>
-          {safeData.map((item, index) => { const isObj = typeof item === "object" && item !== null; const itemVal = isObj ? item[itemValueKey] : item; const itemText = isObj ? item[itemLabelKey] : item;
+          {safeData.map((item, index) => {
+            const isObj = typeof item === "object" && item !== null;
+            const itemVal = isObj ? item[itemValueKey] : item;
+            const itemText = isObj ? item[itemLabelKey] : item;
 
             return (
               <ComboboxItem key={itemVal ?? index} value={itemVal}>

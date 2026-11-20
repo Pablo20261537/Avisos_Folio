@@ -145,40 +145,40 @@ const handleUsuarioSChange = (valorSeleccionado) => {
             <CustomCombo data={Array.isArray(dependenciaList) ? dependenciaList : []} placeholder={"Selecciona dependencial del solicitante"} value={dependencia}
              onValueChange={(itemsSeleccionado) => {
               handleDependenciaChange(itemsSeleccionado)
-             }} itemValueKey="id_dependencia" itemLabelKey="nombre"/>
+             }} itemValueKey="id_dependencia" itemLabelKey="nombre" msgTooltip = "Selecciona la dependencia"/>
 
             <CustomCombo  data={Array.isArray(areaList) ? areaList : []} placeholder={"Selecciona área del solicitante"} value={area} 
               onValueChange={(itemsSeleccionado) => {
               handleAreaChange(itemsSeleccionado)
-             }} itemValueKey="id_area" itemLabelKey="nombre"/>
+             }} itemValueKey="id_area" itemLabelKey="nombre"  msgTooltip = "Selecciona área del solicitante"/>
 
             <CustomCombo data={Array.isArray(usuarioSList) ? usuarioSList : []} placeholder={"Selecciona el usuario solicitante"} disabled={!area}
             value={usuarioS} onValueChange={(itemsSeleccionado) => {
               handleUsuarioSChange(itemsSeleccionado)
-            }} itemValueKey="id_usuario" itemLabelKey="nombre_completo"
+            }} itemValueKey="id_usuario" itemLabelKey="nombre_completo"  msgTooltip = "Selecciona usuario solicitante"
             />
 
             <CustomCombo  data={Array.isArray(tipoAduanaList) ? tipoAduanaList : []} placeholder={"Selecciona tipo(s) de aduana"} value={tipoAduana} 
               onValueChange={(itemsSeleccionado) => {
               handleTipoAduanaChange(itemsSeleccionado)
-             }} itemValueKey="id_tipo_aduana" itemLabelKey="tipo_aduana"/>
+             }} itemValueKey="id_tipo_aduana" itemLabelKey="tipo_aduana"   msgTooltip = "Selecciona tipo de aduana"  />
 
             <CustomCombo data={Array.isArray(aduanaList) ? aduanaList : []}  placeholder={"Selecciona la(s) Aduana(s)"} value={aduana} 
            onValueChange={(itemsSeleccionado) => {
               handleAduanaChange(itemsSeleccionado)
-             }} itemValueKey="clave_aduana_3" itemLabelKey="nombre_corto" disabled={!tipoAduana}/>
+             }} itemValueKey="clave_aduana_3" itemLabelKey="nombre_corto" disabled={!tipoAduana} msgTooltip = "Selecciona las aduanas" />
 
             <CustomCombo data={Array.isArray(tipoAlertaList) ? tipoAlertaList : []} placeholder={"Selecciona el tipo(s) de alerta"} value={tipoAlerta} 
             onValueChange={(itemsSeleccionado) => {
               handleTipoAlertaChange(itemsSeleccionado)
-             }} itemValueKey="id_relacion" itemLabelKey="tipo_alerta" disabled={!tipoAduana}/>
+             }} itemValueKey="id_relacion" itemLabelKey="tipo_alerta" disabled={!tipoAduana}  msgTooltip = "Selecciona tipo de alerta" />
 
-            <CustomCombo data={data} placeholder={"Selecciona los usuarios de Aduana"} disabled={!aduana && !tipoAlerta}/>
+            <CustomCombo data={data} placeholder={"Selecciona los usuarios de Aduana"} disabled={!aduana && !tipoAlerta}  msgTooltip = "Selecciona los usuarios de Aduana" />
 
             <CustomCombo  data={Array.isArray(tipoEventoList) ? tipoEventoList : []} placeholder={"Selecciona el tipo de evento"} value={tipoEvento}
               onValueChange={(itemsSeleccionado) => {
               handleTipoEventoChange(itemsSeleccionado)
-             }} itemValueKey="id_tipo_evento" itemLabelKey="tipo_evento"/>
+             }} itemValueKey="id_tipo_evento" itemLabelKey="tipo_evento"  msgTooltip = "Selcciona tipo de evento" />
              
         </div>
             <Input name="name" defaultValue="Guia area de tipo: " placeholder="Asunto" className=" w-full py-1 border-b-3 border-gray-400 outline-none"/>
